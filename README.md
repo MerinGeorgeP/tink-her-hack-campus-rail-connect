@@ -114,39 +114,32 @@ npm start
 
 **System Architecture:**
 
-![User (Browser)
-        │
-        ▼
-React Frontend (UI + Routing)
-        │
-        ▼
-Firebase Authentication
-        │
-        ▼
-Cloud Firestore Database](docs/architecture.png)
+![![System Architecture](image-6.png)](docs/architecture.png)
 *SYSTEM ARCHITECTURE
 Campus Rail Connect follows a Client–Cloud Architecture using React for the frontend and Firebase for backend services. The system is built as a serverless web application where authentication, database management, and hosting are handled entirely by Firebase.
+
 Frontend Layer (Client Side)
-  The frontend is developed using React.js.
+- The frontend is developed using React.js.
+
 Responsibilities:
-  Rendering user interface (Home, Dashboard, Forms)
-  Handling form inputs (Journeys and Tickets)
-  Navigation using React Router
-  Communicating with Firebase services
-  Implementing business logic such as station order validation and filtering
-  All filtering logic and validation (like station order checking) is handled on the client side. The frontend runs in the user’s browser.
+- Rendering user interface (Home, Dashboard, Forms)
+- Handling form inputs (Journeys and Tickets)
+- Navigation using React Router
+- Communicating with Firebase services
+- Implementing business logic such as station order validation and filtering
+- All filtering logic and validation (like station order checking) is handled on the  client side. The frontend runs in the user’s browser.
 Authentication Layer
-  Authentication is handled using Firebase Authentication.
+- Authentication is handled using Firebase Authentication.
 Purpose:
-  Secure user registration and login
-  College email-based verification
-  Session management
-  Unique User ID (UID) generation for each user
+- Secure user registration and login
+- College email-based verification
+- Session management
+- Unique User ID (UID) generation for each user
 When a user registers:
-  Firebase generates a unique UID.
-  That UID is used to store user details in Firestore.
-  The same UID links journeys and tickets to the correct user.
-  This ensures secure identity management and proper data ownership.
+- Firebase generates a unique UID.
+- That UID is used to store user details in Firestore.
+- The same UID links journeys and tickets to the correct user.
+- This ensures secure identity management and proper data ownership.
 Database Layer (Cloud Firestore)
   All application data is stored in Firebase Firestore, a cloud-based NoSQL database.
   The system uses three main collections:
@@ -348,7 +341,7 @@ Ticket Claiming Workflow
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+https://drive.google.com/file/d/1jvnR8aHm3G0hiiO8luKHNuY2ByutX8I3/view?usp=sharing
 
 *Explain what the video demonstrates - key features, user flow, technical highlights*
 
@@ -359,7 +352,6 @@ Ticket Claiming Workflow
 
 ## AI Tools Used (Optional - For Transparency Bonus)
 
-If you used AI tools during development, document them here for transparency:
 
 **Tool Used:** ChatGPT
 
@@ -387,7 +379,6 @@ If you used AI tools during development, document them here for transparency:
 - UI/UX design decisions
 - Testing, debugging, and final feature validation
 
-*Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
 
 ---
 
