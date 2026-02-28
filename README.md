@@ -1,100 +1,45 @@
 
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
 <p align="center">
   <img src="./img.png" alt="Project Banner" width="100%">
 </p>
 
-# [Project Name] 🎯
+# Campus Rail Connect 🎯
 
 ## Basic Details
 
-### Team Name: [Name]
 
-### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+
+### Team Member
+ [Merin George] - [College of Engineering, Trivandrum]
+
 
 ### Hosted Project Link
-[mention your project hosted link here]
+[(https://tink-her-hack-campus-rail-connect.vercel.app/)]
 
 ### Project Description
-[2-3 lines about what your project does]
+Campus Rail Connect is a student-exclusive web platform that helps college students:
+  Find fellow students traveling on the same train
+  Share unused tickets responsibly
+  Travel safer by coordinating journeys
+It connects verified college students using their college email accounts.
 
 ### The Problem statement
-[What problem are you solving?]
+Students often travel alone between cities, especially for college and holidays.
+Problems include:
+  Safety concerns while traveling alone
+  Difficulty finding trusted co-passengers
+  Unused train tickets going to waste
+  No structured platform for student travel coordination
 
 ### The Solution
-[How are you solving it?]
+Campus Rail Connect provides:
+  College email verified registration
+  Journey matching based on train, date, and boarding station
+  Ticket sharing system with seat type and availability
+  Deboarding logic to ensure correct ticket transfer
+  Dashboard to track personal journeys and uploaded tickets
+It creates a safe, structured, and student-only travel network.
 
 ---
 
@@ -103,25 +48,21 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
-
-**For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
-
----
+- Languages used: JavaScript
+- Frameworks used: React.js
+- Libraries used: React Router, Firebase SDK
+- Tools used: VS Code, Git & GitHub, Firebase Console
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: College Email Authentication
+- Feature 2: Add Journey
+- Feature 3: Find Students (same train, station & date)
+- Feature 4: Upload Ticket (with seat type: SL, 3A, 2A, 1A, CC, 2S)
+- Feature 5: Search Tickets (auto shows all valid trains for date)
+- Feature 6: Deboarding station validation logic
+- Feature 7: Dashboard showing: 1.Your Journeys, 2.Your Tickets, 3.Ticket Status (Available / Claimed)
 
 ---
 
@@ -131,23 +72,13 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+[npm install]
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+[npm start]
 ```
-
-### For Hardware:
-
-#### Components Required
-[List all components needed with specifications]
-
-#### Circuit Setup
-[Explain how to set up the circuit]
-
----
 
 ## Project Documentation
 
@@ -155,280 +86,260 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
+![![Home Page](image.png)]
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![Screensh![Dashboard](image-1.png)ot2](Dashboard)
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
+![Screensho![Add Journey](image-2.png)t3](Add Journey)
+*Share your travel details so other students can connect with you.*
+
+![Scree![Find Students](image-3.png)nshot3](Find Students)
+*Discover students traveling on the same train and date.*
+
+![Screensh![Upload Tickets](image-4.png)ot3](Upload Tickets)
+*Share unused tickets securely with other students.*
+
+![Screensh![Search Tickets](image-5.png)ot3]()
+*View all available trains for your selected date and stations.*
+
+
 
 #### Diagrams
 
 **System Architecture:**
 
-![Architecture Diagram](docs/architecture.png)
-*Explain your system architecture - components, data flow, tech stack interaction*
+![User (Browser)
+        │
+        ▼
+React Frontend (UI + Routing)
+        │
+        ▼
+Firebase Authentication
+        │
+        ▼
+Cloud Firestore Database](docs/architecture.png)
+*SYSTEM ARCHITECTURE
+Campus Rail Connect follows a Client–Cloud Architecture using React for the frontend and Firebase for backend services. The system is built as a serverless web application where authentication, database management, and hosting are handled entirely by Firebase.
+Frontend Layer (Client Side)
+  The frontend is developed using React.js.
+Responsibilities:
+  Rendering user interface (Home, Dashboard, Forms)
+  Handling form inputs (Journeys and Tickets)
+  Navigation using React Router
+  Communicating with Firebase services
+  Implementing business logic such as station order validation and filtering
+  All filtering logic and validation (like station order checking) is handled on the client side. The frontend runs in the user’s browser.
+Authentication Layer
+  Authentication is handled using Firebase Authentication.
+Purpose:
+  Secure user registration and login
+  College email-based verification
+  Session management
+  Unique User ID (UID) generation for each user
+When a user registers:
+  Firebase generates a unique UID.
+  That UID is used to store user details in Firestore.
+  The same UID links journeys and tickets to the correct user.
+  This ensures secure identity management and proper data ownership.
+Database Layer (Cloud Firestore)
+  All application data is stored in Firebase Firestore, a cloud-based NoSQL database.
+  The system uses three main collections:
+    Users Collection:
+    Stores:
+      Username
+      Email
+      Phone number
+    Each document is identified using the Firebase UID.
+
+    Journeys Collection:
+      Stores:
+      Train name
+      Boarding station
+      Deboarding station
+      Date
+      User ID
+    This collection is used in the “Find Students” feature.
+
+    Tickets Collection:
+      Stores:
+        Train name
+        Boarding station
+        Deboarding station
+        Date
+        Seat type (SL, 3A, 2A, 1A, CC, 2S)
+        Coach number
+        Seat number
+        Claimed status (true or false)
+        User ID
+      This collection powers the “Search Tickets” feature.
+
+Data Flow
+
+Registration Flow:
+  User submits registration form → Firebase Authentication creates account → User details stored in Firestore under the generated UID.
+
+Add Journey Flow:
+  User submits journey form → Journey stored in the “journeys” collection with userId.
+
+Find Students Flow:
+  User enters train, boarding station, and date → Firestore is queried for matching journeys → Matching user IDs are retrieved → User details are fetched from the “users” collection → Names and phone numbers are displayed.
+
+Upload Ticket Flow:
+  User fills ticket form → Ticket is stored in the “tickets” collection → Ticket status is initially set to available (claimed = false).
+
+Search Tickets Flow:
+  User selects boarding station, deboarding station, and date → Tickets are fetched from Firestore → Frontend filters:
+  Same date
+  Same boarding station
+  Not claimed
+  Valid station order
+  Matching tickets are displayed.
+  If a ticket is claimed, its status is updated in Firestore.
+
+Station Order Logic:
+  The system maintains a predefined station sequence:
+  TVC → VAK → QLN → KYJ → … → KGQ
+
+  While searching tickets:
+    The user’s deboarding station must appear before or equal to the ticket’s final station.
+    This ensures valid travel routes.
+    Prevents incorrect ticket transfers.
+    This logic is implemented on the frontend.
+
+Security Model
+  Firebase Authentication ensures only registered users can access the system.
+  Firestore security rules can restrict users to modify only their own journeys and tickets.
+  Claimed tickets are hidden from search results.
+
+Deployment Architecture
+The application is deployed using:
+Vercel
+The React frontend connects securely to Firebase services over HTTPS.
+
+Architecture Summary:
+  The system follows:
+    Serverless Architecture
+    Cloud-based NoSQL Database
+    UID-based data linking
+    Client-side business logic
+
+Modular React component design
+  This architecture ensures scalability, security, and simplicity without requiring a traditional backend server.*
 
 **Application Workflow:**
 
 ![Workflow](docs/workflow.png)
-*Add caption explaining your workflow*
+*Campus Rail Connect follows a structured workflow that guides users from registration to journey coordination and ticket sharing.
+User Registration and Login
+  Step 1: The user opens the website.
+  Step 2: The user registers using their college email, username, password, and phone number.
+  Step 3: Firebase Authentication creates a unique User ID (UID).
+  Step 4: User details are stored in the Firestore “users” collection.
+  Step 5: The user logs in and is redirected to the Dashboard.
 
----
+Dashboard Workflow
+After login, the user is taken to the Dashboard where they can:
+  Add Journey
+  Find Students
+  Upload Ticket
+  Search Tickets
+  View their own journeys and tickets
+  The Dashboard also displays:
+    Previously added journeys
+    Uploaded tickets
+    Ticket status (Available or Claimed)
 
-### For Hardware:
+Add Journey Workflow
+  Step 1: User selects:
+                Train name
+                Boarding station
+                Deboarding station
+                Date
 
-#### Schematic & Circuit
+  Step 2: The journey details are saved in the “journeys” collection in Firestore.
 
-![Circuit](Add your circuit diagram here)
-*Add caption explaining connections*
+  Step 3: The journey is linked using the user’s UID.
 
-![Schematic](Add your schematic diagram here)
-*Add caption explaining the schematic*
+  Step 4: Other students can now find this journey using the Find Students feature.
 
-#### Build Photos
+Find Students Workflow
+  Step 1: User enters:
+              Train name
+              Boarding station
+              Date
 
-![Team](Add photo of your team here)
+  Step 2: Firestore is queried for matching journeys.
 
-![Components](Add photo of your components here)
-*List out all components shown*
+  Step 3: Matching journeys are filtered based on:
+              Same train
+              Same boarding station
+              Same date
 
-![Build](Add photos of build process here)
-*Explain the build steps*
+  Step 4: User IDs from matching journeys are retrieved.
 
-![Final](Add photo of final product here)
-*Explain the final build*
+  Step 5: User details (name and phone number) are fetched from the “users” collection.
 
----
+  Step 6: Matching students are displayed.
 
-## Additional Documentation
+Upload Ticket Workflow
+  Step 1: User fills ticket details:
+              Train name
+              Boarding station
+              Deboarding station
+              Date
+              Seat type (SL, 3A, 2A, 1A, CC, 2S)
+              Coach
+              Seat number
 
-### For Web Projects with Backend:
+  Step 2: Ticket is stored in the “tickets” collection.
 
-#### API Documentation
+  Step 3: Ticket is marked as Available (claimed = false).
 
-**Base URL:** `https://api.yourproject.com`
+  Step 4: The ticket becomes visible in Search Tickets.
 
-##### Endpoints
+Search Tickets Workflow
+  Step 1: User selects:
+              Boarding station
+              Deboarding station
+              Date
 
-**GET /api/endpoint**
-- **Description:** [What it does]
-- **Parameters:**
-  - `param1` (string): [Description]
-  - `param2` (integer): [Description]
-- **Response:**
-```json
-{
-  "status": "success",
-  "data": {}
-}
-```
+  Step 2: All tickets are fetched from Firestore.
 
-**POST /api/endpoint**
-- **Description:** [What it does]
-- **Request Body:**
-```json
-{
-  "field1": "value1",
-  "field2": "value2"
-}
-```
-- **Response:**
-```json
-{
-  "status": "success",
-  "message": "Operation completed"
-}
-```
+  Step 3: Frontend filters tickets based on:
+          Same date
+          Same boarding station
+          Not claimed
+          Valid station order logic
+          Station order logic ensures:
+          The user’s deboarding station must come before or equal to the ticket’s final station.
 
-[Add more endpoints as needed...]
+  Step 4: Matching tickets are displayed along with:
+              Train name
+              Seat type
+              Coach
+              Seat number
+              Owner name
+              Phone number
 
----
+  Step 5: If a ticket is claimed, its status is updated to claimed = true.
 
-### For Mobile Apps:
+  Step 6: Claimed tickets are no longer shown in search results.
 
-#### App Flow Diagram
+Ticket Claiming Workflow
 
-![App Flow](docs/app-flow.png)
-*Explain the user flow through your application*
+  Step 1: User clicks “Mark Claimed”.
 
-#### Installation Guide
+  Step 2: The ticket’s claimed field is updated in Firestore.
 
-**For Android (APK):**
-1. Download the APK from [Release Link]
-2. Enable "Install from Unknown Sources" in your device settings:
-   - Go to Settings > Security
-   - Enable "Unknown Sources"
-3. Open the downloaded APK file
-4. Follow the installation prompts
-5. Open the app and enjoy!
+  Step 3: Ticket status changes to Claimed.
 
-**For iOS (IPA) - TestFlight:**
-1. Download TestFlight from the App Store
-2. Open this TestFlight link: [Your TestFlight Link]
-3. Click "Install" or "Accept"
-4. Wait for the app to install
-5. Open the app from your home screen
+  Step 4: Dashboard reflects updated ticket status.*
 
-**Building from Source:**
-```bash
-# For Android
-flutter build apk
-# or
-./gradlew assembleDebug
 
-# For iOS
-flutter build ios
-# or
-xcodebuild -workspace App.xcworkspace -scheme App -configuration Debug
-```
 
----
 
-### For Hardware Projects:
-
-#### Bill of Materials (BOM)
-
-| Component | Quantity | Specifications | Price | Link/Source |
-|-----------|----------|----------------|-------|-------------|
-| Arduino Uno | 1 | ATmega328P, 16MHz | ₹450 | [Link] |
-| LED | 5 | Red, 5mm, 20mA | ₹5 each | [Link] |
-| Resistor | 5 | 220Ω, 1/4W | ₹1 each | [Link] |
-| Breadboard | 1 | 830 points | ₹100 | [Link] |
-| Jumper Wires | 20 | Male-to-Male | ₹50 | [Link] |
-| [Add more...] | | | | |
-
-**Total Estimated Cost:** ₹[Amount]
-
-#### Assembly Instructions
-
-**Step 1: Prepare Components**
-1. Gather all components listed in the BOM
-2. Check component specifications
-3. Prepare your workspace
-![Step 1](images/assembly-step1.jpg)
-*Caption: All components laid out*
-
-**Step 2: Build the Power Supply**
-1. Connect the power rails on the breadboard
-2. Connect Arduino 5V to breadboard positive rail
-3. Connect Arduino GND to breadboard negative rail
-![Step 2](images/assembly-step2.jpg)
-*Caption: Power connections completed*
-
-**Step 3: Add Components**
-1. Place LEDs on breadboard
-2. Connect resistors in series with LEDs
-3. Connect LED cathodes to GND
-4. Connect LED anodes to Arduino digital pins (2-6)
-![Step 3](images/assembly-step3.jpg)
-*Caption: LED circuit assembled*
-
-**Step 4: [Continue for all steps...]**
-
-**Final Assembly:**
-![Final Build](images/final-build.jpg)
-*Caption: Completed project ready for testing*
-
----
-
-### For Scripts/CLI Tools:
-
-#### Command Reference
-
-**Basic Usage:**
-```bash
-python script.py [options] [arguments]
-```
-
-**Available Commands:**
-- `command1 [args]` - Description of what command1 does
-- `command2 [args]` - Description of what command2 does
-- `command3 [args]` - Description of what command3 does
-
-**Options:**
-- `-h, --help` - Show help message and exit
-- `-v, --verbose` - Enable verbose output
-- `-o, --output FILE` - Specify output file path
-- `-c, --config FILE` - Specify configuration file
-- `--version` - Show version information
-
-**Examples:**
-
-```bash
-# Example 1: Basic usage
-python script.py input.txt
-
-# Example 2: With verbose output
-python script.py -v input.txt
-
-# Example 3: Specify output file
-python script.py -o output.txt input.txt
-
-# Example 4: Using configuration
-python script.py -c config.json --verbose input.txt
-```
-
-#### Demo Output
-
-**Example 1: Basic Processing**
-
-**Input:**
-```
-This is a sample input file
-with multiple lines of text
-for demonstration purposes
-```
-
-**Command:**
-```bash
-python script.py sample.txt
-```
-
-**Output:**
-```
-Processing: sample.txt
-Lines processed: 3
-Characters counted: 86
-Status: Success
-Output saved to: output.txt
-```
-
-**Example 2: Advanced Usage**
-
-**Input:**
-```json
-{
-  "name": "test",
-  "value": 123
-}
-```
-
-**Command:**
-```bash
-python script.py -v --format json data.json
-```
-
-**Output:**
-```
-[VERBOSE] Loading configuration...
-[VERBOSE] Parsing JSON input...
-[VERBOSE] Processing data...
-{
-  "status": "success",
-  "processed": true,
-  "result": {
-    "name": "test",
-    "value": 123,
-    "timestamp": "2024-02-07T10:30:00"
-  }
-}
-[VERBOSE] Operation completed in 0.23s
-```
-
----
 
 ## Project Demo
 
@@ -446,48 +357,36 @@ python script.py -v --format json data.json
 
 If you used AI tools during development, document them here for transparency:
 
-**Tool Used:** [e.g., GitHub Copilot, v0.dev, Cursor, ChatGPT, Claude]
+**Tool Used:** ChatGPT
 
-**Purpose:** [What you used it for]
-- Example: "Generated boilerplate React components"
-- Example: "Debugging assistance for async functions"
-- Example: "Code review and optimization suggestions"
+**Purpose:** 
+- Generated React component structures"
+- Assisted with Firebase Authentication and Firestore integration
+- Debugged runtime errors (undefined field values, filtering issues)
+- Helped implement station order validation logic
+- Suggested UI improvements and professional layout styling
+- Assisted in writing README documentation and system architecture
 
 **Key Prompts Used:**
-- "Create a REST API endpoint for user authentication"
-- "Debug this async function that's causing race conditions"
-- "Optimize this database query for better performance"
+- Assisted in writing README documentation and system architecture
+- Fix undefined field value error in Firebase
+- Implement station order logic for ticket filtering
+- Improve dashboard UI with professional card layout
+- Write system architecture explanation and application workflow documentation for README
 
-**Percentage of AI-generated code:** [Approximately X%]
+**Percentage of AI-generated code:** [Approximately 40%]
 
 **Human Contributions:**
 - Architecture design and planning
 - Custom business logic implementation
 - Integration and testing
 - UI/UX design decisions
+- Testing, debugging, and final feature validation
 
 *Note: Proper documentation of AI usage demonstrates transparency and earns bonus points in evaluation!*
 
 ---
 
-## Team Contributions
-
-- [Name 1]: [Specific contributions - e.g., Frontend development, API integration, etc.]
-- [Name 2]: [Specific contributions - e.g., Backend development, Database design, etc.]
-- [Name 3]: [Specific contributions - e.g., UI/UX design, Testing, Documentation, etc.]
-
----
-
-## License
-
-This project is licensed under the [LICENSE_NAME] License - see the [LICENSE](LICENSE) file for details.
-
-**Common License Options:**
-- MIT License (Permissive, widely used)
-- Apache 2.0 (Permissive with patent grant)
-- GPL v3 (Copyleft, requires derivative works to be open source)
-
----
 
 Made with ❤️ at TinkerHub
 >>>>>>> 4ebaf364f73660b07cb2a00c7aedb3043b55fa77
