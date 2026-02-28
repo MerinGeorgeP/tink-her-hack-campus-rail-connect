@@ -15,11 +15,11 @@
 
 
 ### Team Member
- [Merin George] - [College of Engineering, Trivandrum]
+ Merin George - College of Engineering, Trivandrum
 
 
 ### Hosted Project Link
-[(https://tink-her-hack-campus-rail-connect.vercel.app/)]
+https://tink-her-hack-campus-rail-connect.vercel.app/
 
 ### Project Description
 Campus Rail Connect is a student-exclusive web platform that helps college students:
@@ -76,37 +76,37 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[npm install]
+npm install
 ```
 
 #### Run
 ```bash
-[npm start]
+npm start
 ```
 
 ## Project Documentation
 
 ### For Software:
 
-#### Screenshots (Add at least 3)
+#### Screenshots 
 
-![![Home Page](image.png)]
-*Add caption explaining what this shows*
+[Home Page](image.png)
+*This is the home page from where you can either Login or Register*
 
-![Screensh![Dashboard](image-1.png)ot2](Dashboard)
-*Add caption explaining what this shows*
+[Dashboard](image-1.png)
+*This is the dashboard where all the options are available*
 
-![Screensho![Add Journey](image-2.png)t3](Add Journey)
-*Share your travel details so other students can connect with you.*
+[Add Journey](image-2.png)
+*This option allows you to Share your travel details so other students can connect with you.*
 
-![Scree![Find Students](image-3.png)nshot3](Find Students)
-*Discover students traveling on the same train and date.*
+[Find Students](image-3.png)
+*This option allows you to Discover students traveling on the same train and date.*
 
-![Screensh![Upload Tickets](image-4.png)ot3](Upload Tickets)
-*Share unused tickets securely with other students.*
+[Upload Tickets](image-4.png)
+*This option allows you to Share unused tickets securely with other students.*
 
-![Screensh![Search Tickets](image-5.png)ot3]()
-*View all available trains for your selected date and stations.*
+[Search Tickets](image-5.png)
+*This option allows you to View all available trains for your selected date and stations.*
 
 
 
