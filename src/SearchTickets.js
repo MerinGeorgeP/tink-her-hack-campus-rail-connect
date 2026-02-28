@@ -1,85 +1,133 @@
 import { useState } from "react";
 import {
-  query,
-  where,
-  getDocs,
   collection,
-  updateDoc,
+  getDocs,
   doc,
-  getDoc
+  getDoc,
+  updateDoc
 } from "firebase/firestore";
 import { db } from "./firebase";
+import { stations } from "./stations";
+import "./App.css";
 
 function SearchTickets() {
-  const [train, setTrain] = useState("");
-  const [from, setFrom] = useState("");
-  const [tickets, setTickets] = useState([]);
+  const [fromStation, setFromStation] = useState("");
+  const [toStation, setToStation] = useState("");
+  const [date, setDate] = useState("");
+  const [results, setResults] = useState([]);
 
   const handleSearch = async () => {
-    const q = query(
-      collection(db, "tickets"),
-      where("train", "==", train),
-      where("fromStation", "==", from),
-      where("status", "==", "AVAILABLE")
-    );
+    try {
+      const snapshot = await getDocs(collection(db, "tickets"));
+      const matched = [];
 
-    const snapshot = await getDocs(q);
+      for (const docSnap of snapshot.docs) {
+        const data = docSnap.data();
 
-    const detailedTickets = await Promise.all(
-      snapshot.docs.map(async (docSnap) => {
-        const ticketData = docSnap.data();
+        // Skip claimed tickets
+        if (data.claimed === true) continue;
 
-        const userDoc = await getDoc(
-          doc(db, "users", ticketData.ownerId)
-        );
+        // Date match
+        if (date && data.date !== date) continue;
 
-        return {
+        // Boarding station match
+        if (fromStation && data.fromStation !== fromStation) continue;
+
+        // Deboarding logic
+        if (toStation) {
+          const ticketToIndex = stations.indexOf(data.toStation);
+          const userToIndex = stations.indexOf(toStation);
+
+          if (ticketToIndex === -1 || userToIndex === -1) continue;
+
+          // Only show if user deboards before or at ticket destination
+          if (userToIndex > ticketToIndex) continue;
+        }
+
+        // Get user details
+        const userDoc = await getDoc(doc(db, "users", data.userId));
+        if (!userDoc.exists()) continue;
+
+        const userData = userDoc.data();
+
+        matched.push({
           id: docSnap.id,
-          ...ticketData,
-          username: userDoc.data().username,
-          phone: userDoc.data().phone
-        };
-      })
-    );
+          ...data,
+          username: userData.username,
+          phone: userData.phone
+        });
+      }
 
-    setTickets(detailedTickets);
+      setResults(matched);
+
+    } catch (error) {
+      console.error(error);
+      alert("Error searching tickets");
+    }
   };
 
   const markClaimed = async (id) => {
-    await updateDoc(doc(db, "tickets", id), {
-      status: "CLAIMED"
-    });
-    alert("Ticket Claimed");
+    await updateDoc(doc(db, "tickets", id), { claimed: true });
+    handleSearch(); // Refresh list
   };
 
   return (
-    <div>
-      <h3>Search Tickets</h3>
+    <div className="app-container">
+      <div className="page-title">Search Tickets</div>
+      <div className="page-subtitle">
+        View all available trains for your selected date and stations.
+      </div>
 
-      <input
-        placeholder="Train"
-        onChange={(e) => setTrain(e.target.value)}
-      />
+      <div className="form-card">
+        <div className="form-grid">
 
-      <input
-        placeholder="From"
-        onChange={(e) => setFrom(e.target.value)}
-      />
+          <select onChange={(e) => setFromStation(e.target.value)}>
+            <option value="">Boarding Station</option>
+            {stations.map((s) => (
+              <option key={s}>{s}</option>
+            ))}
+          </select>
 
-      <button onClick={handleSearch}>Search</button>
+          <select onChange={(e) => setToStation(e.target.value)}>
+            <option value="">Your Deboarding Station</option>
+            {stations.map((s) => (
+              <option key={s}>{s}</option>
+            ))}
+          </select>
 
-      {tickets.map((ticket) => (
-        <div key={ticket.id}>
-          <p>Name: {ticket.username}</p>
-          <p>Phone: {ticket.phone}</p>
-          <p>Seat: {ticket.seatNumber}</p>
-          <p>Coach: {ticket.coach}</p>
+          <input
+            type="date"
+            onChange={(e) => setDate(e.target.value)}
+          />
 
-          <button onClick={() => markClaimed(ticket.id)}>
-            Mark Claimed
-          </button>
         </div>
-      ))}
+
+        <br />
+        <button onClick={handleSearch}>Search</button>
+      </div>
+
+      {results.length === 0 && (
+        <div className="result-card">
+          No matching tickets found.
+        </div>
+      )}
+
+      {results.map((ticket) => (
+        <div key={ticket.id} className="result-card">
+            <p><strong>Train:</strong> {ticket.train}</p>
+            <p><strong>Date:</strong> {ticket.date}</p>
+            <p><strong>Seat Type:</strong> {ticket.seatType}</p>
+            <p><strong>Coach:</strong> {ticket.coach}</p>
+            <p><strong>Seat:</strong> {ticket.seat}</p>
+            <p><strong>Name:</strong> {ticket.username}</p>
+            <p><strong>Phone:</strong> {ticket.phone}</p>
+
+            <button onClick={() => markClaimed(ticket.id)}>
+            Mark Claimed
+            </button>
+        </div>
+        ))}
+      
     </div>
   );
 }

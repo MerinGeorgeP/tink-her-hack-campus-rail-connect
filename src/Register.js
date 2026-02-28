@@ -1,8 +1,10 @@
 import { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth, db } from "./firebase";
-import { doc, setDoc } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import { auth, db } from "./firebase";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { doc, setDoc } from "firebase/firestore";
+import logo from "./logo.png";
+import "./App.css";
 
 function Register() {
   const navigate = useNavigate();
@@ -13,57 +15,69 @@ function Register() {
   const [phone, setPhone] = useState("");
 
   const handleRegister = async () => {
-    if (!email.endsWith("@cet.ac.in")) {
-      alert("Use college email");
-      return;
-    }
-
     try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        email,
-        password
-      );
+      const userCred = await createUserWithEmailAndPassword(auth, email, password);
 
-      await setDoc(doc(db, "users", userCredential.user.uid), {
-        username: username,
-        email: email,
-        phone: phone
+      await setDoc(doc(db, "users", userCred.user.uid), {
+        username,
+        email,
+        phone
       });
 
-      alert("Registered successfully");
-      navigate("/login");
-    } catch (error) {
-      alert(error.message);
+      navigate("/dashboard");
+    } catch (err) {
+      alert(err.message);
     }
   };
 
   return (
-    <div>
-      <h2>Register</h2>
+    <div className="hero-container">
 
-      <input
-        placeholder="Username"
-        onChange={(e) => setUsername(e.target.value)}
-      />
+      <div className="hero-left">
+        <img src={logo} alt="Logo" className="hero-logo" />
+        <h1 className="hero-title">Campus Rail Connect</h1>
+        <p className="hero-subtitle">
+          Join the student travel network.
+        </p>
+      </div>
 
-      <input
-        placeholder="College Email"
-        onChange={(e) => setEmail(e.target.value)}
-      />
+      <div className="hero-card">
+        <h2>Register</h2>
 
-      <input
-        type="password"
-        placeholder="Password"
-        onChange={(e) => setPassword(e.target.value)}
-      />
+        <input
+          className="auth-input"
+          placeholder="Username"
+          onChange={(e) => setUsername(e.target.value)}
+        />
 
-      <input
-        placeholder="Phone Number"
-        onChange={(e) => setPhone(e.target.value)}
-      />
+        <input
+          className="auth-input"
+          placeholder="College Email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
-      <button onClick={handleRegister}>Register</button>
+        <input
+          className="auth-input"
+          type="password"
+          placeholder="Password"
+          onChange={(e) => setPassword(e.target.value)}
+        />
+
+        <input
+          className="auth-input"
+          placeholder="Phone Number"
+          onChange={(e) => setPhone(e.target.value)}
+        />
+
+        <button className="primary-btn" onClick={handleRegister}>
+          Register
+        </button>
+
+        <p className="switch-link" onClick={() => navigate("/")}>
+          ← Back to Home
+        </p>
+      </div>
+
     </div>
   );
 }

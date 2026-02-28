@@ -1,38 +1,104 @@
 import { useState } from "react";
-import { addDoc, collection } from "firebase/firestore";
-import { db, auth } from "./firebase";
+import { collection, addDoc } from "firebase/firestore";
+import { auth, db } from "./firebase";
+import { stations } from "./stations";
+import "./App.css";
 
 function UploadTicket() {
-  const [form, setForm] = useState({});
+  const [train, setTrain] = useState("");
+  const [fromStation, setFromStation] = useState("");
+  const [toStation, setToStation] = useState("");
+  const [date, setDate] = useState("");
+  const [coach, setCoach] = useState("");
+  const [seat, setSeat] = useState("");
+  const [seatType, setSeatType] = useState("");
 
   const handleUpload = async () => {
-    await addDoc(collection(db, "tickets"), {
-      ownerId: auth.currentUser.uid,
-      train: form.train,
-      fromStation: form.from,
-      toStation: form.to,
-      coach: form.coach,
-      seatNumber: form.seat,
-      status: "AVAILABLE"
-    });
+    try {
+      await addDoc(collection(db, "tickets"), {
+        train,
+        fromStation,
+        toStation,
+        date,
+        coach,
+        seat,
+        seatType,   // ✅ NEW FIELD
+        userId: auth.currentUser.uid,
+        claimed: false
+      });
 
-    alert("Ticket Uploaded");
+      alert("Ticket uploaded successfully!");
+
+      // Reset
+      setTrain("");
+      setCoach("");
+      setSeat("");
+      setSeatType("");
+
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   return (
-    <div>
-      <h3>Upload Ticket</h3>
-      <input placeholder="Train"
-        onChange={e => setForm({...form, train: e.target.value})} />
-      <input placeholder="From"
-        onChange={e => setForm({...form, from: e.target.value})} />
-      <input placeholder="To"
-        onChange={e => setForm({...form, to: e.target.value})} />
-      <input placeholder="Coach"
-        onChange={e => setForm({...form, coach: e.target.value})} />
-      <input placeholder="Seat"
-        onChange={e => setForm({...form, seat: e.target.value})} />
-      <button onClick={handleUpload}>Upload Ticket</button>
+    <div className="app-container">
+      <div className="page-title">Upload Ticket</div>
+      <div className="page-subtitle">
+        Share unused tickets securely with other students.
+      </div>
+
+      <div className="form-card">
+        <div className="form-grid">
+
+          <input
+            placeholder="Train Name"
+            onChange={(e) => setTrain(e.target.value)}
+          />
+
+          <select onChange={(e) => setFromStation(e.target.value)}>
+            <option>Boarding Station</option>
+            {stations.map((s) => (
+              <option key={s}>{s}</option>
+            ))}
+          </select>
+
+          <select onChange={(e) => setToStation(e.target.value)}>
+            <option>Deboarding Station</option>
+            {stations.map((s) => (
+              <option key={s}>{s}</option>
+            ))}
+          </select>
+
+          <input
+            type="date"
+            onChange={(e) => setDate(e.target.value)}
+          />
+
+          <select onChange={(e) => setSeatType(e.target.value)}>
+            <option>Seat Type</option>
+            <option value="SL">Sleeper (SL)</option>
+            <option value="3A">AC 3 Tier (3A)</option>
+            <option value="2A">AC 2 Tier (2A)</option>
+            <option value="1A">AC First Class (1A)</option>
+            <option value="CC">Chair Car (CC)</option>
+            <option value="2S">Second Sitting (2S)</option>
+          </select>
+
+          <input
+            placeholder="Coach"
+            onChange={(e) => setCoach(e.target.value)}
+          />
+
+          <input
+            placeholder="Seat Number"
+            onChange={(e) => setSeat(e.target.value)}
+          />
+
+        </div>
+
+        <br />
+        <button onClick={handleUpload}>Upload Ticket</button>
+      </div>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import AddJourney from "./AddJourney";
 import SearchJourney from "./SearchJourney";
 import UploadTicket from "./UploadTicket";
 import SearchTickets from "./SearchTickets";
+import "./App.css";
 
 function App() {
   return (
