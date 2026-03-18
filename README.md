@@ -1,8 +1,5 @@
 
 
-<<<<<<< HEAD
-=======
-=======
 >>>>>>> 0d3298da41be945377f33aff969a51a8b60a3e39
 <p align="center">
   <img src="./img.png" alt="Project Banner" width="100%">
